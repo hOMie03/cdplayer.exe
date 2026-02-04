@@ -1,6 +1,6 @@
 # <img src="public/assets/cdplayer_exe-logo.png" width="4%" /> [cdplayer](https://cdplayerexe.vercel.app/)
 
-A web-based Windows98esque offline music player.
+A web-based _Windows98esque_ offline music player.
 
 Features:
 * ![](https://github.com/1j01/98/raw/master/images/icons/folder-open-16x16.png) Add your local songs.
