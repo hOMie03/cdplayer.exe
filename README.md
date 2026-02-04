@@ -1,59 +1,25 @@
-# Cdplayer
+# <img src="public/assets/cdplayer_exe-logo.png" width="4%" /> [cdplayer](https://github.com/hOMie03/cdplayer.exe)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+A web-based Windows98esque offline music player.
 
-## Development server
+Features:
+* ![](https://github.com/1j01/98/raw/master/images/icons/folder-open-16x16.png) Add your local songs.
+* ![](https://github.com/1j01/98/raw/master/images/icons/audio-okay-16x16.png) Browse through the discs (albums) and play/pause/stop song.
+* ![](https://github.com/1j01/98/raw/master/images/icons/shutdown-16x16.png) lose yourself to music
 
-To start a local development server, run:
+## Try it out (AD! AD! AD! AD INCOMING!)
 
-```bash
-ng serve
-```
+[ ＥＮＴＥＲ　![](https://github.com/1j01/98/raw/master/images/icons/windows-update-16x16.png)　ＷＥＢ　９８　河ご移](https://web98lite.vercel.app/)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+ｔｈｅ　ｆｕｔｕｒｅ　ｉｓ　ｈｅｒｅ．
 
-## Code scaffolding
+[![](images/windows98-future-edition.jpg)](https://web98lite.vercel.app/)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Development Setup
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Clone the repository.](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+- Open the repo folder in IDE like VS Code.
+- Open the terminal, and run <kbd>npm i</kbd>.
+- After that to run the project, run <kbd>npm start</kbd>.
+- Enjoy the cdplayer.exe offline! 🥤
+happy coding :)
