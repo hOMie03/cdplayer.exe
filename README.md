@@ -1,4 +1,4 @@
-# <img src="public/assets/cdplayer_exe-logo.png" width="4%" /> [cdplayer](https://github.com/hOMie03/cdplayer.exe)
+# <img src="public/assets/cdplayer_exe-logo.png" width="4%" /> [cdplayer](https://cdplayerexe.vercel.app/)
 
 A web-based Windows98esque offline music player.
 
