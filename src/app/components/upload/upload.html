@@ -1,0 +1,16 @@
+<div class="upload-container">
+    <!-- Removed inner w98-window wrapper -->
+    <p>Please select music files to load into the player.</p>
+
+    @if (library.loading()) {
+    <div class="loading-bar w98-sunken">
+        <div class="loading-progress"></div>
+    </div>
+    <p>Loading metadata...</p>
+    } @else {
+    <div class="file-input-wrapper">
+        <input type="file" multiple accept="audio/*" (change)="onFileSelected($event)" id="file-upload" hidden>
+        <label for="file-upload" class="w98-btn" style="font-size: 14px; padding: 8px 16px;">Select Files...</label>
+    </div>
+    }
+</div>

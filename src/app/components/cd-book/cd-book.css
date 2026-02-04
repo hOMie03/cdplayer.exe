@@ -1,0 +1,258 @@
+.book-container {
+    perspective: 1200px;
+}
+
+.cd-book {
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* Closed state styling */
+.book-cover {
+    width: 220px;
+    height: 240px;
+    /* Taller rectangular aspect */
+    display: flex;
+    /* Retro binder texture */
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.1) 100%),
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0, 0, 0, 0.05) 2px, rgba(0, 0, 0, 0.05) 4px),
+        #000080;
+    color: white;
+    border: 1px solid #000040;
+    box-shadow:
+        inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+        5px 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding: 0;
+    border-radius: 2px 4px 4px 2px;
+}
+
+.binder-spine {
+    width: 35px;
+    height: 100%;
+    /* Spine texture */
+    background:
+        linear-gradient(90deg, #000060 0%, #0000A0 40%, #000060 100%);
+    border-right: 2px solid #000030;
+    box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.binder-spine::before,
+.binder-spine::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: gold;
+    margin: 0 auto;
+    box-shadow: 0 1px 1px black;
+}
+
+.binder-face {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    /* Cleaner font for the cover */
+}
+
+/* Sticker visual on the cover */
+.binder-face h2 {
+    background: #ffeecc;
+    color: #333;
+    padding: 5px 15px;
+    border: 1px solid #cdaa7d;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transform: rotate(-2deg);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Open state styling */
+.book-pages {
+    width: 340px;
+    height: 400px;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    background: #fdfdfd;
+    /* Paper color */
+    border: 10px solid #000080;
+    /* Binder edges visible */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+/* Plastic sleeve effect */
+.page-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    padding: 15px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    position: relative;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #000080;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+    transition: transform 0.1s;
+}
+
+.nav-btn:active {
+    transform: scale(0.9);
+}
+
+.nav-btn:disabled {
+    color: #ccc;
+    cursor: default;
+    text-shadow: none;
+}
+
+.cd-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* cursor: pointer; */
+    /* Removed global pointer */
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.cd-disc {
+    width: 140px;
+    /* Slightly smaller to fit info */
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    background: #e0e0e0;
+    border: 1px solid #aaa;
+    transition: transform 0.2s;
+}
+
+.cd-slot:hover .cd-disc {
+    transform: scale(1.02);
+}
+
+.cd-disc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cd-hole {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: #fdfdfd;
+    /* Match page bg */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #aaa;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cd-info {
+    margin-top: 10px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #999;
+    display: flex;
+    flex-direction: column;
+    max-height: 160px;
+    /* Limit height */
+    overflow: hidden;
+}
+
+.album-header {
+    background: var(--w98-blue);
+    color: white;
+    padding: 2px 4px;
+    flex-shrink: 0;
+}
+
+.track-title {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist {
+    font-size: 0.9em;
+    color: #e0e0e0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-list {
+    overflow-y: auto;
+    flex: 1;
+    text-align: left;
+}
+
+.track-item {
+    padding: 2px 4px;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    font-size: 11px;
+    border-bottom: 1px dotted #eee;
+}
+
+.track-item:hover {
+    background: #000080;
+    color: white;
+}
+
+.track-number {
+    color: #666;
+    width: 15px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.track-item:hover .track-number {
+    color: #ccc;
+}
+
+.track-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-controls {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: #eee;
+    border-top: 1px solid #ccc;
+}

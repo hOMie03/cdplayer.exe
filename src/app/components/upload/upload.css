@@ -1,0 +1,39 @@
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.file-input-wrapper {
+    margin-top: 20px;
+}
+
+.loading-bar {
+    width: 200px;
+    /* Fixed width */
+    height: 20px;
+    background: white;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    width: 50%;
+    background: var(--w98-blue);
+    animation: load 1s infinite linear;
+}
+
+@keyframes load {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(200%);
+    }
+}

@@ -1,0 +1,53 @@
+<div class="book-container center-screen">
+    <div class="cd-book" [class.open]="isOpen()" (click)="!isOpen() && toggleBook()">
+
+        @if (!isOpen()) {
+        <div class="book-cover w98-window">
+            <div class="binder-spine"></div>
+            <div class="binder-face">
+                <h2>CD Wallet</h2>
+                <p>{{ albums().length }} Discs</p>
+                <small>Click to Open</small>
+            </div>
+        </div>
+        } @else {
+        <div class="book-pages w98-window">
+            <div class="page-content">
+                <button class="nav-btn" (click)="prevPage($event)" [disabled]="currentIndex() === 0">◄</button>
+
+                <div class="cd-slot">
+                    @if (currentAlbum()) {
+                    <div class="cd-disc">
+                        <img [src]="currentAlbum()!.cover" alt="Cover">
+                        <div class="cd-hole"></div>
+                    </div>
+                    <div class="cd-info w98-sunken">
+                        <div class="album-header">
+                            <div class="track-title">{{ currentAlbum()!.name }}</div>
+                            <div class="track-artist">{{ currentAlbum()!.artist }}</div>
+                        </div>
+                        <div class="track-list custom-scrollbar">
+                            @for (song of currentAlbum()!.songs; track $index) {
+                            <div class="track-item" (click)="playSong(song)">
+                                <span class="track-number">{{ $index + 1 }}.</span>
+                                <span class="track-name">{{ song.title }}</span>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                    } @else {
+                    <p>No Disc</p>
+                    }
+                </div>
+
+                <button class="nav-btn" (click)="nextPage($event)"
+                    [disabled]="currentIndex() >= albums().length - 1">►</button>
+            </div>
+            <div class="book-controls">
+                <button class="w98-btn" (click)="toggleBook(); $event.stopPropagation()">Close Book</button>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>
